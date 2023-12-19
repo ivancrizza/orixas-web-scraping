@@ -22,21 +22,21 @@ def extract_attribute(tree_html, xpath, attribute):
     return data[0] if data else None
 
 
-url = 'https://ocandomble.com/os-orixas/omulu/'
+url = 'https://ocandomble.com/os-orixas/oxumare/'
 
 response = requests.get(url)
 webpage = response.content
 
 tree = html.fromstring(webpage)
 xpaths = {
-    "title": '//*[@id="post-23"]/div[1]',
-    "img": '//*[@id="post-23"]/div[2]/p[1]/a/img',
-    "day": '//*[@id="post-23"]/div[2]/p[2]',
-    "color": '//*[@id="post-23"]/div[2]/p[3]',
-    "symbols": '//*[@id="post-23"]/div[2]/p[4]',
-    "element": '//*[@id="post-23"]/div[2]/p[5]',
-    "dominance": '//*[@id="post-23"]/div[2]/p[6]',
-    "salutes": '//*[@id="post-23"]/div[2]/p[7]'
+    "title": '//*[@id="post-32"]/div[1]/h2/a',
+    "img": '//*[@id="post-32"]/div[2]/p[1]/strong/span/a/img',
+    "day": '//*[@id="post-32"]/div[2]/p[2]',
+    "color": '//*[@id="post-32"]/div[2]/p[3]',
+    "symbols": '//*[@id="post-32"]/div[2]/p[4]',
+    "element": '//*[@id="post-32"]/div[2]/p[5]',
+    "dominance": '//*[@id="post-32"]/div[2]/p[6]',
+    "salutes": '//*[@id="post-32"]/div[2]/p[7]'
 }
 # nana_xpaths = {
 #     "title": '//*[@id="post-20"]/div[1]/h2/a',
@@ -48,7 +48,7 @@ xpaths = {
 #     "dominance": '//*[@id="post-20"]/div[2]/p[7]',
 #     "salutes": '//*[@id="post-20"]/div[2]/p[8]'
 # }
-orixa_info_omulu = {
+orixa_info_oxumare = {
     "título": extract_text(tree, xpaths["title"]),
     "imagem": extract_attribute(tree, xpaths["img"], "src"),
     "dia": extract_text(tree, xpaths["day"]),
@@ -58,14 +58,14 @@ orixa_info_omulu = {
     "domínio": extract_text(tree, xpaths["dominance"]),
     "saudações": extract_text(tree, xpaths["salutes"])
 }
-print(extract_text(tree, xpaths["title"]))
-print(extract_attribute(tree, xpaths["img"], "src"))
-print(extract_text(tree, xpaths["day"]))
-print(extract_text(tree, xpaths["color"]))
-print(extract_text(tree, xpaths["symbols"]))
-print(extract_text(tree, xpaths["element"]))
-print(extract_text(tree, xpaths["dominance"]))
-print(extract_text(tree, xpaths["salutes"]))
+# print(extract_text(tree, xpaths["title"]))
+# print(extract_attribute(tree, xpaths["img"], "src"))
+# print(extract_text(tree, xpaths["day"]))
+# print(extract_text(tree, xpaths["color"]))
+# print(extract_text(tree, xpaths["symbols"]))
+# print(extract_text(tree, xpaths["element"]))
+# print(extract_text(tree, xpaths["dominance"]))
+# print(extract_text(tree, xpaths["salutes"]))
 
-# with open('orixa_info_omulu.json', 'w', encoding='utf-8') as f:
-#     json.dump(orixa_info_omulu, f, ensure_ascii=False, indent=4)
+with open('orixa_info_oxumare.json', 'w', encoding='utf-8') as f:
+    json.dump(orixa_info_oxumare, f, ensure_ascii=False, indent=4)

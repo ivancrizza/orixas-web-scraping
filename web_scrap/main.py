@@ -58,14 +58,14 @@ orixa_info_omulu = {
     "domínio": extract_text(tree, xpaths["dominance"]),
     "saudações": extract_text(tree, xpaths["salutes"])
 }
-# print(extract_text(tree, xpaths["title"]))
-# print(extract_attribute(tree, xpaths["img"], "src"))
-# print(extract_text(tree, xpaths["day"]))
-# print(extract_text(tree, xpaths["color"]))
-# print(extract_text(tree, xpaths["symbols"]))
-# print(extract_text(tree, xpaths["element"]))
-# print(extract_text(tree, xpaths["dominance"]))
-# print(extract_text(tree, xpaths["salutes"]))
+print(extract_text(tree, xpaths["title"]))
+print(extract_attribute(tree, xpaths["img"], "src"))
+print(extract_text(tree, xpaths["day"]))
+print(extract_text(tree, xpaths["color"]))
+print(extract_text(tree, xpaths["symbols"]))
+print(extract_text(tree, xpaths["element"]))
+print(extract_text(tree, xpaths["dominance"]))
+print(extract_text(tree, xpaths["salutes"]))
 
-with open('orixa_info_omulu.json', 'w', encoding='utf-8') as f:
-    json.dump(orixa_info_omulu, f, ensure_ascii=False, indent=4)
+# with open('orixa_info_omulu.json', 'w', encoding='utf-8') as f:
+#     json.dump(orixa_info_omulu, f, ensure_ascii=False, indent=4)

@@ -153,3 +153,4 @@ cython_debug/
 .DS_Store
 web_scrap/.idea/workspace.xml
 web_scrap/.idea/workspace.xml
+*.xml

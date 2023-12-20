@@ -22,21 +22,21 @@ def extract_attribute(tree_html, xpath, attribute):
     return data[0] if data else None
 
 
-url = 'https://ocandomble.com/os-orixas/oxum/'
+url = 'https://ocandomble.com/os-orixas/ewa/'
 
 response = requests.get(url)
 webpage = response.content
 
 tree = html.fromstring(webpage)
 xpaths = {
-    "title": '//*[@id="post-76"]/div[1]/h2/a',
-    "img": '//*[@id="post-76"]/div[2]/p[1]/img',
-    "day": '//*[@id="post-76"]/div[2]/p[2]',
-    "color": '//*[@id="post-76"]/div[2]/p[3]',
-    "symbols": '//*[@id="post-76"]/div[2]/p[4]',
-    "element": '//*[@id="post-76"]/div[2]/p[5]',
-    "dominance": '//*[@id="post-76"]/div[2]/p[6]',
-    "salutes": '//*[@id="post-76"]/div[2]/p[7]'
+    "title": '//*[@id="post-137"]/div[1]/h2/a',
+    "img": '//*[@id="post-137"]/div[2]/p[1]/strong/span/a/img',
+    "day": '//*[@id="post-137"]/div[2]/h3[1]',
+    "color": '//*[@id="post-137"]/div[2]/h3[2]',
+    "symbols": '//*[@id="post-137"]/div[2]/h3[3]',
+    "element": '//*[@id="post-137"]/div[2]/h3[4]',
+    "dominance": '//*[@id="post-137"]/div[2]/h3[5]',
+    "salutes": '//*[@id="post-137"]/div[2]/h3[6]'
 }
 
 # IANSA PRECISA FAZER NA MAO
@@ -50,7 +50,7 @@ xpaths = {
 #     "dominance": '//*[@id="post-20"]/div[2]/p[7]',
 #     "salutes": '//*[@id="post-20"]/div[2]/p[8]'
 # }
-orixa_info_oxum = {
+orixa_info_ewa = {
     "título": extract_text(tree, xpaths["title"]),
     "imagem": extract_attribute(tree, xpaths["img"], "src"),
     "dia": extract_text(tree, xpaths["day"]),
@@ -69,5 +69,5 @@ orixa_info_oxum = {
 # print(extract_text(tree, xpaths["dominance"]))
 # print(extract_text(tree, xpaths["salutes"]))
 
-with open('orixa_info_oxum.json', 'w', encoding='utf-8') as f:
-    json.dump(orixa_info_oxum, f, ensure_ascii=False, indent=4)
+with open('orixa_info_ewa.json', 'w', encoding='utf-8') as f:
+    json.dump(orixa_info_ewa, f, ensure_ascii=False, indent=4)
